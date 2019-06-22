@@ -7,6 +7,8 @@ import App from './components/app';
 
 const store = configureStore();
 
+(window as any).store = store;
+
 const Root = () => (
     <Provider store={store}>
         <App />
