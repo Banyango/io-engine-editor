@@ -16,7 +16,7 @@ export function entityReducer(
         case REMOVE_ENTITY:
             return {
                 objects: state.objects.filter(
-                    e => e.id === action.payload.id
+                    e => e.id !== action.payload.id
                 )
             };
         default:
