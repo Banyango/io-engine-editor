@@ -5,6 +5,9 @@ import configureStore from './store/index'
 
 import App from './components/app';
 
+// css
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const store = configureStore();
 
 (window as any).store = store;

@@ -23,9 +23,10 @@ class EntityComponent extends Component<EntityProps, EntityState> {
         });
 
         return (
-            <div className={className} >
-                <p>entity+ {entity.id}</p>
-            </div>
+            <tr>
+                <th scope="row">{entity.id}</th>
+                <td>{entity.name}</td>
+            </tr>
         )
     }
 }
