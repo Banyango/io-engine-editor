@@ -29,16 +29,13 @@ module.exports = {
             use: ['style-loader', 'css-loader']
         }, {
             test: /\.(png|jpg|gif)$/,
-            use: [
-                {
-                    loader: 'file-loader'
-                }
-            ]
+            use: {
+                loader: 'file-loader'
+            }
         }]
     }, resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
-
     plugins: [
         new HtmlWebPackPlugin({
             hash: true,
