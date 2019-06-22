@@ -1,7 +1,8 @@
-import {ADD_ENTITY, EntitiesState, EntityActionTypes, REMOVE_ENTITY} from "./types";
+import {ADD_ENTITY, DESELECT_ENTITY, EntitiesState, EntityActionTypes, REMOVE_ENTITY, SELECT_ENTITY} from "./types";
 
 const initialState: EntitiesState = {
-    objects: []
+    objects: [],
+    selectedIndex: -1,
 };
 
 export function entityReducer(
@@ -11,13 +12,25 @@ export function entityReducer(
     switch (action.type) {
         case ADD_ENTITY:
             return {
-                objects: [...state.objects, action.payload]
+                objects: [...state.objects, action.payload],
+                selectedIndex: state.selectedIndex,
             };
         case REMOVE_ENTITY:
             return {
                 objects: state.objects.filter(
                     e => e.id !== action.payload.id
-                )
+                ),
+                selectedIndex: state.selectedIndex,
+            };
+        case SELECT_ENTITY:
+            return {
+                objects: state.objects,
+                selectedIndex: action.payload,
+            };
+        case DESELECT_ENTITY:
+            return {
+                objects: state.objects,
+                selectedIndex: -1,
             };
         default:
             return state

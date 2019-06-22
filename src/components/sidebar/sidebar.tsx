@@ -15,8 +15,10 @@ class Sidebar extends Component<SidebarProps, {}> {
         return (
             <table className="table table-hover">
                 <thead>
-                <th scope="col">#</th>
-                <th scope="col">Entity</th>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Entity</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {entities.map((e => <EntityComponent key={e.id} entity={e} isSelected={false}/>))}
