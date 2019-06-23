@@ -25,7 +25,7 @@ export function entityReducer(
         case SELECT_ENTITY:
             return {
                 objects: state.objects,
-                selectedIndex: action.payload,
+                selectedIndex: state.objects.indexOf(state.objects.find(e=> e.id == action.payload))
             };
         case DESELECT_ENTITY:
             return {

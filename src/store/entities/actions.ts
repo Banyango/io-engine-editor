@@ -1,4 +1,4 @@
-import {ADD_ENTITY, Entity} from "./types";
+import {ADD_ENTITY, DESELECT_ENTITY, Entity, SELECT_ENTITY} from "./types";
 
 export function addEntity(entity: Entity) {
     return {
@@ -11,5 +11,18 @@ export function removeEntity(entity: Entity) {
     return {
         type: ADD_ENTITY,
         payload:entity
+    }
+}
+
+export function selectEntity(index: number) {
+    return {
+        type: SELECT_ENTITY,
+        payload:index
+    }
+}
+
+export function deselectEntity() {
+    return {
+        type: DESELECT_ENTITY,
     }
 }

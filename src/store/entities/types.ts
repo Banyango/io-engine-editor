@@ -31,7 +31,6 @@ interface SelectEntityAction {
 
 interface DeselectEntityAction {
     type: typeof DESELECT_ENTITY;
-    payload: number;
 }
 
 export type EntityActionTypes = AddEntityAction | RemoveEntityAction | SelectEntityAction | DeselectEntityAction

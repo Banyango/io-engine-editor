@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import EntityComponent from "./entity";
-import {Entity} from "../../store/entities/types";
+import {EntitiesState, Entity} from "../../store/entities/types";
+import {connect} from "react-redux";
 
 type SidebarProps = {
     entities: Entity[];
-    selectedIndex: -1;
+    selectedIndex: number;
 }
 
 class Sidebar extends Component<SidebarProps, {}> {
@@ -21,7 +22,7 @@ class Sidebar extends Component<SidebarProps, {}> {
                     </tr>
                 </thead>
                 <tbody>
-                    {entities.map((e => <EntityComponent key={e.id} entity={e} isSelected={false}/>))}
+                    {entities.map(((e,i) => <EntityComponent key={e.id} entity={e} isSelected={i == this.props.selectedIndex}/>))}
                 </tbody>
             </table>
         )

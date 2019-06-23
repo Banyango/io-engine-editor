@@ -26,7 +26,7 @@ class App extends Component<AppProps> {
         return (
             <div className="row">
                 <div className="col-lg-2">
-                    <Sidebar entities={this.props.entities.objects} selectedIndex={-1}/>
+                    <Sidebar entities={this.props.entities.objects} selectedIndex={this.props.entities.selectedIndex}/>
                 </div>
                 <div className="col-lg-7">
                     <div></div>
