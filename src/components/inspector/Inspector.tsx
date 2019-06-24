@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import {Entity} from "../../store/entities/types";
+import {Entity} from "../../store/entities/Types";
 import {AppState} from "../../store";
 import {connect} from "react-redux";
+import EcsComponent from "./components/EcsComponent";
 
 type InspectorProps = {
     selected: Entity;
@@ -20,10 +21,7 @@ class Inspector extends Component<InspectorProps, {}> {
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Position x:0 y:0</li>
-                        <li className="list-group-item">Collision false</li>
-                    </ul>
+                    { this.props.selected.components.map((e,i)=> <EcsComponent key={i} component={e}/>)}
                 </div>
             </div>
         )

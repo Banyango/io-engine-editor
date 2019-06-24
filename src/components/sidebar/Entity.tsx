@@ -1,7 +1,7 @@
 import React, {Component, MouseEventHandler, TableHTMLAttributes} from 'react';
 import classNames from 'classnames';
-import {Entity} from "../../store/entities/types";
-import {deselectEntity, selectEntity} from "../../store/entities/actions";
+import {Entity} from "../../store/entities/Types";
+import {deselectEntity, selectEntity} from "../../store/entities/Actions";
 import {connect} from "react-redux";
 
 

@@ -1,7 +1,9 @@
+import {Component} from "../components/Types";
 
 export interface Entity {
-    id:number,
-    name:string
+    id:number;
+    name:string;
+    components:Array<Component>
 }
 
 export interface EntitiesState {

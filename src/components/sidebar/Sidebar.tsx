@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import EntityComponent from "./entity";
-import {EntitiesState, Entity} from "../../store/entities/types";
+import EntityComponent from "./Entity";
+import {EntitiesState, Entity} from "../../store/entities/Types";
 import {connect} from "react-redux";
 
 type SidebarProps = {

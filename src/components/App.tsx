@@ -1,9 +1,9 @@
 import React, {Component, ReactNode} from 'react';
-import Sidebar from "./sidebar/sidebar";
-import {EntitiesState} from "../store/entities/types";
+import Sidebar from "./sidebar/Sidebar";
+import {EntitiesState} from "../store/entities/Types";
 import {AppState} from "../store";
 import {connect} from "react-redux";
-import Inspector from "./inspector/inspector";
+import Inspector from "./inspector/Inspector";
 
 interface AppProps {
     entities: EntitiesState

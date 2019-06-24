@@ -1,4 +1,4 @@
-import {ADD_ENTITY, DESELECT_ENTITY, Entity, SELECT_ENTITY} from "./types";
+import {ADD_ENTITY, DESELECT_ENTITY, Entity, SELECT_ENTITY} from "./Types";
 
 export function addEntity(entity: Entity) {
     return {

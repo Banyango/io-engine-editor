@@ -1,4 +1,4 @@
-import {ADD_ENTITY, DESELECT_ENTITY, EntitiesState, EntityActionTypes, REMOVE_ENTITY, SELECT_ENTITY} from "./types";
+import {ADD_ENTITY, DESELECT_ENTITY, EntitiesState, EntityActionTypes, REMOVE_ENTITY, SELECT_ENTITY} from "./Types";
 
 const initialState: EntitiesState = {
     objects: [],
