@@ -17,7 +17,7 @@ class App extends Component<AppProps> {
                     <Sidebar entities={this.props.entities.objects} selectedIndex={-1}/>
                 </div>
                 <div className="col-lg-10">
-                    <div></div>
+                    <canvas id="mycanvas"></canvas>
                 </div>
             </div>)
     }
@@ -29,7 +29,7 @@ class App extends Component<AppProps> {
                     <Sidebar entities={this.props.entities.objects} selectedIndex={this.props.entities.selectedIndex}/>
                 </div>
                 <div className="col-lg-7">
-                    <div></div>
+                    <canvas id="mycanvas"></canvas>
                 </div>
                 <div className="col-lg-3">
                     <Inspector/>

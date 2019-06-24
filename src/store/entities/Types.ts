@@ -13,6 +13,7 @@ export interface EntitiesState {
 
 export const ADD_ENTITY = "ADD_ENTITY";
 export const REMOVE_ENTITY = "REMOVE_ENTITY";
+export const REMOVE_ALL_ENTITIES = "REMOVE_ALL_ENTITY";
 export const SELECT_ENTITY = "SELECT_ENTITY";
 export const DESELECT_ENTITY = "DESELECT_ENTITY";
 
@@ -26,6 +27,10 @@ interface RemoveEntityAction {
     payload: Entity;
 }
 
+interface RemoveAllEntityAction {
+    type: typeof REMOVE_ALL_ENTITIES;
+}
+
 interface SelectEntityAction {
     type: typeof SELECT_ENTITY;
     payload: number;
@@ -35,4 +40,4 @@ interface DeselectEntityAction {
     type: typeof DESELECT_ENTITY;
 }
 
-export type EntityActionTypes = AddEntityAction | RemoveEntityAction | SelectEntityAction | DeselectEntityAction
+export type EntityActionTypes = AddEntityAction | RemoveEntityAction | SelectEntityAction | DeselectEntityAction | RemoveAllEntityAction

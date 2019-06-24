@@ -1,4 +1,12 @@
-import {ADD_ENTITY, DESELECT_ENTITY, EntitiesState, EntityActionTypes, REMOVE_ENTITY, SELECT_ENTITY} from "./Types";
+import {
+    ADD_ENTITY,
+    DESELECT_ENTITY,
+    EntitiesState,
+    EntityActionTypes,
+    REMOVE_ALL_ENTITIES,
+    REMOVE_ENTITY,
+    SELECT_ENTITY
+} from "./Types";
 
 const initialState: EntitiesState = {
     objects: [],
@@ -30,6 +38,11 @@ export function entityReducer(
         case DESELECT_ENTITY:
             return {
                 objects: state.objects,
+                selectedIndex: -1,
+            };
+        case REMOVE_ALL_ENTITIES:
+            return {
+                objects: [],
                 selectedIndex: -1,
             };
         default:
