@@ -40,7 +40,7 @@ class App extends Component<AppProps> {
 
     render() {
         return (
-            <div className="container">
+            <div className="container-fluid">
                 {this.props.entities.selectedIndex != -1 ? this.renderWithInspector() : this.renderNoInspector()}
             </div>
         )

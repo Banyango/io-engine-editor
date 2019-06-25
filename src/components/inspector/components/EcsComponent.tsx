@@ -12,22 +12,23 @@ class EcsComponent extends React.Component<PositionComponentProps> {
         if (component.properties != null) {
             let result = Array<ReactNode>();
             component.properties.forEach((e, i)=> {
+                if (e != null && e.value != null) {
+                    let value = (<span></span>);
 
-                let value = (<span></span>);
+                    if (e.value.type === 'float') {
+                        value = (<FloatValueRenderer key={i} property={e}/>)
+                    } else if (e.value.type === 'vector') {
+                        value = (<VectorValueRenderer property={e}/>)
+                    } else {
+                        console.log("value cannot be rendered " + e.value.type)
+                    }
 
-                if (e.value.type === 'float') {
-                    value = (<FloatValueRenderer key={i} property={e} />)
-                } else if (e.value.type === 'vector') {
-                    value = (<VectorValueRenderer property={e}/>)
-                } else {
-                    console.log("value cannot be rendered " + Object.getPrototypeOf(e.value))
+                    result.push(
+                        <div key={e.name}>
+                            <div className="">{value}</div>
+                        </div>
+                    )
                 }
-
-                result.push(
-                    <div className="">
-                        <div className="">{value}</div>
-                    </div>
-                )
             });
             return result
         } else {

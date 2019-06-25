@@ -6,6 +6,11 @@ export interface Entity {
     components:Array<Component>
 }
 
+export interface ComponentUpdate {
+    entityId:number;
+    component:Component
+}
+
 export interface EntitiesState {
     objects:Entity[];
     selectedIndex:number;
@@ -16,6 +21,7 @@ export const REMOVE_ENTITY = "REMOVE_ENTITY";
 export const REMOVE_ALL_ENTITIES = "REMOVE_ALL_ENTITY";
 export const SELECT_ENTITY = "SELECT_ENTITY";
 export const DESELECT_ENTITY = "DESELECT_ENTITY";
+export const UPDATE_ENTITY = "UPDATE_ENTITY";
 
 interface AddEntityAction {
     type: typeof ADD_ENTITY;
@@ -40,4 +46,10 @@ interface DeselectEntityAction {
     type: typeof DESELECT_ENTITY;
 }
 
-export type EntityActionTypes = AddEntityAction | RemoveEntityAction | SelectEntityAction | DeselectEntityAction | RemoveAllEntityAction
+interface UpdateEntityAction {
+    type: typeof UPDATE_ENTITY;
+    id: number;
+    payload:Component
+}
+
+export type EntityActionTypes = AddEntityAction | RemoveEntityAction | SelectEntityAction | DeselectEntityAction | RemoveAllEntityAction | UpdateEntityAction

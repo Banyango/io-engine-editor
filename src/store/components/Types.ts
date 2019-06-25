@@ -1,7 +1,7 @@
-
 export interface Component {
-    name:string
-    properties:Array<Property<any>>
+    id:string;
+    name:string;
+    properties:Array<Property<any>>;
 }
 
 export interface Property<T extends Value> {

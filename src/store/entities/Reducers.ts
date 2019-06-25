@@ -5,8 +5,9 @@ import {
     EntityActionTypes,
     REMOVE_ALL_ENTITIES,
     REMOVE_ENTITY,
-    SELECT_ENTITY
+    SELECT_ENTITY, UPDATE_ENTITY
 } from "./Types";
+import {componentReducer} from "../components/Reducers";
 
 const initialState: EntitiesState = {
     objects: [],
@@ -33,12 +34,25 @@ export function entityReducer(
         case SELECT_ENTITY:
             return {
                 objects: state.objects,
-                selectedIndex: state.objects.indexOf(state.objects.find(e=> e.id == action.payload))
+                selectedIndex: state.objects.indexOf(state.objects.find(e => e.id == action.payload))
             };
         case DESELECT_ENTITY:
             return {
                 objects: state.objects,
                 selectedIndex: -1,
+            };
+        case UPDATE_ENTITY:
+            return {
+                objects: state.objects.map(e => {
+                    if (e.id !== action.id) {
+                        return e
+                    }
+                    return {
+                        ...e,
+                        components: componentReducer({components: e.components}, action).components
+                    }
+                }),
+                selectedIndex: state.selectedIndex
             };
         case REMOVE_ALL_ENTITIES:
             return {
